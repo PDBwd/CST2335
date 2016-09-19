@@ -2,5 +2,7 @@
 <resources>
     <string name="app_name">Lab1</string>
     <string name="hello_message">Bonjour!</string>
-    <string name ="ButtonText">I\'m a button</string>
+    <string name="ButtonText">I\'m a button eh</string>
+    <string name="title_activity_login">LoginActivity Canada eh</string>
+    <string name="LoginText">Login Canadian eh</string>
 </resources>
