@@ -5,4 +5,7 @@
     <string name="ButtonText">I\'m a button eh</string>
     <string name="title_activity_login">LoginActivity Canada eh</string>
     <string name="LoginText">Login Canadian eh</string>
+    <string name="Button1">Button1 eh</string>
+    <string name="Button2">Button2 eh</string>
+    <string name="SwitchIT">Enable Something eh</string>
 </resources>
