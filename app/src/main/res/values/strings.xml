@@ -7,6 +7,14 @@
     <string name="Button1">Button1</string>
     <string name="Button2">Button2</string>
     <string name="SwitchIT">Enable Something</string>
+    <string name="LoginButton">Login</string>
+    <string name="loginText">email@domain.com</string>
+    <string name="dialog">Do you want to finish this activity?</string>
+    <string name="dialog_title">Continue?</string>
+    <string name="ok">yes</string>
+    <string name="cancel">No</string>
+    <string name="startChat">Start Chat</string>
+    <string name="sendButton">Send</string>
 
 
 </resources>
