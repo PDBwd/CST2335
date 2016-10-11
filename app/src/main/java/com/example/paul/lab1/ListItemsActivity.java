@@ -36,9 +36,10 @@ public class ListItemsActivity extends AppCompatActivity {
                  int REQUEST_IMAGE_CAPTURE = 1;
 
 
-                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); // code used from lab to start camera. 
+                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); // code used from lab to start camera.
                     if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
 
 
                     }
@@ -87,7 +88,7 @@ public class ListItemsActivity extends AppCompatActivity {
 
                 builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int which) { // if the user decides to quit the app
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("Reponse","My Information to share");
                         setResult(Activity.RESULT_OK,resultIntent);
@@ -97,7 +98,7 @@ public class ListItemsActivity extends AppCompatActivity {
                 });
                 builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int which) { // if the user decides to continue the app
                         onResume();
                         checkBox.setChecked(false); // method to uncheck the box once question is answered.
                     }
@@ -110,6 +111,8 @@ public class ListItemsActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 

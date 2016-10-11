@@ -8,4 +8,12 @@
     <string name="Button1">Button1 eh</string>
     <string name="Button2">Button2 eh</string>
     <string name="SwitchIT">Enable Something eh</string>
+    <string name="LoginButton">Login</string>
+    <string name="loginText">email@domain.ca</string>
+    <string name="dialog">Do you want to finish this activity eh?</string>
+    <string name="dialog_title">Continue eh?</string>
+    <string name="ok">yes eh</string>
+    <string name="cancel">No eh</string>
+    <string name="startChat">Start Chat Eh</string>
+    <string name="sendButton">Send Eh</string>
 </resources>
