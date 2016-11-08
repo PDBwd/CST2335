@@ -26,7 +26,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) { // declaring an SQLLiteDatabase object named db
 
         db.execSQL("create table " +TABLE_NAME+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT,"+KEY_MESSAGE+" text)" );
         Log.i("ChatDataBaseHelper","Calling OnCreate");
@@ -47,8 +47,8 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
 
         try {
 
-            contentValues.put(KEY_MESSAGE,message);
-            db.insert(TABLE_NAME, null, contentValues);
+            contentValues.put(KEY_MESSAGE,message); //used for inputting rows into the database.
+            db.insert(TABLE_NAME, null, contentValues); // insert the data from the contentValues object.
 
             return true;
         }catch(Exception e){
@@ -56,10 +56,10 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-
+    // Cursor is a storage object that contains rows from a query.
     // method to return the messages inside the database
     public Cursor getMessages(){
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(); // opens the database for read or write. getReadableDatabase() for read only
         Cursor msg = db.rawQuery("select * from " + TABLE_NAME,null);
         return msg;
 

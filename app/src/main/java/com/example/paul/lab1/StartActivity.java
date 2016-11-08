@@ -23,9 +23,8 @@ public class StartActivity extends AppCompatActivity {
          String ACTIVITY_NAME = "StartActivity";
         Log.i(ACTIVITY_NAME,"In OnCreate()");
 
-        Button nextAct = (Button)findViewById(R.id.button); // bringing in the button object which is a widget in the design tab called nextAct
 
-        nextAct = (Button)findViewById(R.id.button);
+        Button nextAct = (Button)findViewById(R.id.button);
         nextAct.setOnClickListener(new View.OnClickListener(){ // this is a listener. will check to see if button is clicked or not.
             @Override
             public void onClick(View v) {
@@ -36,6 +35,7 @@ public class StartActivity extends AppCompatActivity {
 
             }
         });
+
         Button chatButton = (Button)findViewById(R.id.startChat);
         chatButton.setOnClickListener(new View.OnClickListener(){ // this is a listener. will check to see if button is clicked or not.
             @Override
@@ -47,6 +47,16 @@ public class StartActivity extends AppCompatActivity {
 
 
             }
+        });
+
+        Button weatherButton = (Button)findViewById(R.id.weatherButton);
+        weatherButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),WeatherForecast.class);
+                startActivityForResult(i,5);
+            }
+
         });
 
     }

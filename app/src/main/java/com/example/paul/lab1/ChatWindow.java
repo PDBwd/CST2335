@@ -38,11 +38,12 @@ public class ChatWindow extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.chatListView);
         final EditText editText = (EditText)findViewById(R.id.messageText);
         sendButton = (Button)findViewById(R.id.sendButton);
-        final ChatAdapter messageAdapter = new ChatAdapter(this);
+        final ChatAdapter messageAdapter = new ChatAdapter(this); // chatAdapter is a built in adapater
         listView.setAdapter(messageAdapter);
         Cdb = new ChatDatabaseHelper(this);
 
-        Cursor cursor = Cdb.getMessages();
+
+        Cursor cursor = Cdb.getMessages(); // get messages method is of type Cursor from database helper class
 
         // cursor will move through the database to find the next text if there is any.
         while (cursor.moveToNext()) { arrayList.add(cursor.getString(cursor.getColumnIndex(Cdb.KEY_MESSAGE))); }
@@ -56,8 +57,10 @@ public class ChatWindow extends AppCompatActivity {
                     String chatText =  editText.getText().toString(); // changing editText to String
                     arrayList.add(chatText); // adding the string from EditTest to arrayList
                     boolean isInserted =  Cdb.insertData(chatText); // inserting the message text into the database
-                    if(isInserted = true){ Toast.makeText(ChatWindow.this,"Message Sent",Toast.LENGTH_SHORT).show(); } // if the message inserts into the database this toast will show
-                    else { Toast.makeText(ChatWindow.this,"Message not Sent",Toast.LENGTH_SHORT).show(); } // if message does not nter the database this toast will show
+                    if(isInserted = true)
+                    { Toast.makeText(ChatWindow.this,"Message Sent",Toast.LENGTH_SHORT).show(); } // if the message inserts into the database this toast will show
+                    else {
+                        Toast.makeText(ChatWindow.this,"Message not Sent",Toast.LENGTH_SHORT).show(); } // if message does not nter the database this toast will show
                     messageAdapter.notifyDataSetChanged(); // notifying the adapter that a message has been sent, changing from incoming to outgoing
                     editText.setText(" "); // set the text on the send button to blank.
 
@@ -83,7 +86,7 @@ public class ChatWindow extends AppCompatActivity {
 
         // getview method
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) { // inner class
 
             LayoutInflater Inflater = ChatWindow.this.getLayoutInflater(); // an inflater inflates the xml layout into a view.
             View result = null;
